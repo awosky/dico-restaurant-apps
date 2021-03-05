@@ -1,0 +1,112 @@
+.posts {
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+@media screen and (min-width: 500px) {
+
+    .restaurantDetail__menus__foodsdrinks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (min-width: 650px) {
+    .post-item__content {
+        padding: 16px 32px 32px 32px;
+    }
+
+    .post-item__title {
+        font-size: 18px;
+    }
+
+    .post-item__description {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (min-width: 700px) {
+    .posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 16px;
+    }
+
+    .restaurantDetail__menus__foodsdrinks {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .nav__list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .menu {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .nav {
+        background-color: #fff;
+        width: 80vw;
+        height: 100vh;
+        position: absolute;
+
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-80vw, 0);
+        transform: translate(-80vw, 0);
+
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .nav__item {
+        display: list-item;
+        border-bottom: 1px solid #E0E0E0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav__item a {
+        color: black;
+    }
+
+    .menu {
+        display: inline-block;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    .posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .restaurantDetail {
+        padding: 32px;
+    }
+
+    .restaurantDetail__container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .restaurantDetail__info {
+        margin: 0 20px;
+    }
+
+    .restaurantDetail__menus__foodsdrinks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

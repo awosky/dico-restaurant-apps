@@ -1,0 +1,370 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: #424242;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #61b15a;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+ }
+
+ .skip-link:focus {
+    top: 0;
+ }
+
+
+/*
+ * Header
+ */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 60px;
+    transition: min-height 0.3s;
+    background-color: transparent;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: .1px solid rgba(128, 128, 128, 0.192);
+    backdrop-filter: blur(2px);
+}
+
+.logo {
+    margin-top:auto;
+    margin-bottom: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: x-large;
+    font-family: 'Fredoka One', cursive;
+}
+
+.nav {
+    width: 100%;
+    margin: auto;
+    text-align: right;
+    z-index: 10;
+}
+
+.nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__item {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 1.3em;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: none;
+    color: #ffffff80;
+}
+
+.menus {
+    text-align: right;
+}
+
+.menu {
+    font-size: 32px;
+    margin: 10px;
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+
+/*
+ * Jumbotron
+ */
+ .hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(315deg,
+    rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.6) 100%),
+     url('../public/images/heros/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__inner {
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.hero__title {
+    width: 60%;
+    margin: auto;
+    color: #fff;
+    font-weight: 600;
+    font-size: 36px;
+    border: 1px solid white;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero__tagline {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'Dancing Script', cursive;
+}
+
+
+/*
+ * main
+ */
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*
+ * content
+ */
+
+.content {
+    padding: 32px;
+}
+
+
+/*
+ * latest
+ */
+
+.latest {
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.latest__label {
+    font-size: 32px;
+    font-weight: lighter;
+}
+
+.latest__label::after {
+    content: '';
+    margin-top: 16px;
+    display: block;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/*
+ * post
+ */
+
+.posts {
+    margin: 32px auto auto;
+    text-align: left;
+}
+
+/*
+ * post item
+ */
+
+.post-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.post-item__container{
+    position: relative;
+    z-index: -1;
+}
+
+.post-item__container-text{
+    position: absolute;
+    padding: 5px 20px ;
+    top: 10px;
+    left: 0;
+    font-size: 25px;
+    color: #1a1c20;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 1px;
+    backdrop-filter: blur(2px);
+    box-shadow: 2px 2px 1px rgba(128, 128, 128, .2);
+}
+
+.post-item__content {
+    padding: 16px;
+}
+
+.post-item__thumbnail {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.post-item__date {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #565353;
+}
+
+.post-item__title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 16px;
+    transition: 0.3s opacity;
+}
+
+.post-item__title:hover {
+    opacity: 0.5;
+}
+
+.post-item__title a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.post-item__description {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+
+.restaurantDetail {
+    margin-top: 70px;
+    padding: 10px;
+}
+
+.restaurantDetail__container{
+    width: 100%;
+    grid-template-columns: 1fr;
+    display: grid;
+}
+
+.restaurantDetail__thumbnail {
+    margin: auto;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.restaurantDetail__info {
+    padding: 10px;
+    margin: 0 5px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.restaurantDetail__info__title {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.restaurantDetail__info__categories span{
+    text-align: center;
+    margin: 1px;
+    padding: 1px 5px;
+    border: .1px solid grey;
+    border-radius: 5px;
+}
+
+.restaurantDetail__menus {
+    margin: 20px 0;
+}
+
+.restaurantDetail__menus h2 {
+    margin: 10px auto;
+}
+
+.restaurantDetail__menus h3 {
+    margin: 5px auto;
+}
+
+.restaurantDetail__menus__foodsdrinks {
+    width: 100%;
+    display: grid;
+    row-gap: 16px;
+    column-gap: 10px;
+    margin: 10px auto;
+}
+
+.restaurantDetail__foodsdrinks__container {
+    max-width: 300px;
+    position: relative;
+    z-index: -1;
+}
+
+.restaurantDetail__foodsdrinks__thumbnail{
+    width: 100%;
+    opacity: .5;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.restaurantDetail__foodsdrinks__container-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border: .5px solid rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    padding: 5px 10px ;
+    background: rgba(255, 255, 255, 0.5);
+}
+/*
+ * footer
+ */
+
+ footer {
+    background-color: rgba(0,0,0,.8);
+    color: #ffffff;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
