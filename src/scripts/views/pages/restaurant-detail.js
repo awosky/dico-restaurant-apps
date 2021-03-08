@@ -4,6 +4,7 @@ import {
   createRestaurantDetailTemplate,
   createCategoriesTemplate,
   createFoodsDrinksTemplate,
+  createRestaurantCustomerReviews,
   createLikeButtonTemplate }
   from '../templates/template-creator';
 import CONFIG from '../../globals/config';
@@ -39,6 +40,11 @@ const RestaurantDetail = {
       const restaurantMenusDrinks = document.querySelector('#restaurantDetail__menus__drinks');
       restaurant.restaurant.menus.drinks.slice(0,8).forEach((drink) => {
         restaurantMenusDrinks.innerHTML += createFoodsDrinksTemplate(drink, CONFIG.DRINK_TYPE);
+      });
+      
+      const restaurantReviews = document.querySelector('#restaurantDetail_reviews');
+      restaurant.restaurant.customerReviews.forEach((review) => {
+        restaurantReviews.innerHTML += createRestaurantCustomerReviews(review);
       });
 
       const restaurantDetail = restaurant.restaurant

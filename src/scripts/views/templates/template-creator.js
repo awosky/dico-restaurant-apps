@@ -47,6 +47,10 @@ const createRestaurantDetailTemplate = (detail) => `
         <h3> Drinks </h3>
         <div id="restaurantDetail__menus__drinks" class="restaurantDetail__menus__foodsdrinks"></div>
     </div>
+    <div class="restaurantDetail_review">
+        <h2> Customer Reviews </h2>
+        <div id="restaurantDetail_reviews" class="restaurantDetail_reviews"></div>
+    </div>
   
   `;
 
@@ -60,6 +64,14 @@ const createRestaurantDetailTemplate = (detail) => `
         src="${type == CONFIG.FOOD_TYPE? CONFIG.BASE_IMAGE_URL_FOODS : CONFIG.BASE_IMAGE_URL_DRINK}"
         alt="Gambar ${foods.name}">
         <p class="restaurantDetail__foodsdrinks__container-text">${foods.name.toUpperCase()}</p>
+    </div>
+  `;
+
+  const createRestaurantCustomerReviews = (review) => `
+    <div class="restaurantDetail_reviews_container">
+        <h4>${review.name}</h4>
+        <small>${review.date}</small>
+        <p>${review.review}</p>
     </div>
   `;
 
@@ -81,5 +93,6 @@ export {
      createRestaurantDetailTemplate,
      createCategoriesTemplate,
      createFoodsDrinksTemplate,
+     createRestaurantCustomerReviews,
      createLikeButtonTemplate,
      createLikedButtonTemplate };
