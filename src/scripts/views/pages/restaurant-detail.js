@@ -3,14 +3,18 @@ import TheRestaurantSource from '../../data/restaurant-source';
 import { 
   createRestaurantDetailTemplate,
   createCategoriesTemplate,
-  createFoodsDrinksTemplate }
+  createFoodsDrinksTemplate,
+  createLikeButtonTemplate }
   from '../templates/template-creator';
 import CONFIG from '../../globals/config';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
+
 
 const RestaurantDetail = {
     async render() {
       return `
         <div id="restaurant" class="restaurantDetail"></div>
+        <div id="likeButtonContainer"></div>
       `;
     },
    
@@ -35,6 +39,12 @@ const RestaurantDetail = {
       const restaurantMenusDrinks = document.querySelector('#restaurantDetail__menus__drinks');
       restaurant.restaurant.menus.drinks.slice(0,8).forEach((drink) => {
         restaurantMenusDrinks.innerHTML += createFoodsDrinksTemplate(drink, CONFIG.DRINK_TYPE);
+      });
+
+      const restaurantDetail = restaurant.restaurant
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        restaurant: restaurantDetail,
       });
     },
   };
